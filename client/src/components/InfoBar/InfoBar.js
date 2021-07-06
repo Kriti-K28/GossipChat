@@ -13,7 +13,7 @@ const InfoBar = ({ room }) => (
     </div>
     <div className="rightInnerContainer">
       <a className="end_chat" href="/">End Chat </a>
-      <a href="/">Private Chat</a>
+      {/* <a href="/">Private Chat</a> */}
     </div>
   </div>
 );
