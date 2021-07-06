@@ -1,36 +1,81 @@
-import React from 'react';
-
-import onlineIcon from '../../icons/onlineIcon.png';
-
-import './TextContainer.css';
-
-const TextContainer = ({ users }) => (
-  <div className="textContainer">
-    <div>
-      <h1>Realtime Chat Application <span role="img" aria-label="emoji">💬</span></h1>
-      <h2>Created with React, Express, Node and Socket.IO <span role="img" aria-label="emoji">❤️</span></h2>
-      <h2>Try it out right now! <span role="img" aria-label="emoji">⬅️</span></h2>
-    </div>
-    {
-      users
-        ? (
-          <div>
-            <h1>People currently chatting:</h1>
-            <div className="activeContainer">
-              <h2>
-                {users.map(({name}) => (
-                  <div key={name} className="activeItem">
-                    {name}
-                    <img alt="Online Icon" src={onlineIcon}/>
-                  </div>
-                ))}
-              </h2>
-            </div>
-          </div>
-        )
-        : null
+import React,{Component} from 'react';
+import { Map, GoogleApiWrapper, Marker  } from 'google-maps-react';
+import './TextContainer.css'
+const mapStyles = {
+  width: '50%',
+  height: '80%',
+  margin: '0'
+};
+class TextContainer extends Component{
+       constructor(props){
+           super(props);
+       this.state={
+            name: "React",
+           latitude:null,
+           longitude:null,
+           userAddress:null
+       };
+       this.getLocation = this.getLocation.bind(this);
+       this.getCoordinates = this.getCoordinates.bind(this);
     }
-  </div>
-);
 
-export default TextContainer;
+     getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.getCoordinates,this.showerror);
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      }
+      getCoordinates(position){
+          console.log(position.coords.latitude);
+          this.setState({
+               latitude:position.coords.latitude,
+               longitude:position.coords.longitude
+          })
+      }
+      showerror(error) {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.")
+            break;
+          case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.")
+            break;
+          case error.TIMEOUT:
+            alert("The request to get user location timed out.")
+            break;
+          case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.")
+            
+        }
+
+      }
+    render(){
+        return(
+            <div className="textContainer">
+                <button onClick={this.getLocation}>Get Cordinate</button>
+                <p>Lat: {this.state.latitude}</p>
+                <p>Lon: {this.state.longitude}</p>
+                <p>Address: {this.state.userAddress}</p>
+                 <Map
+          google={this.props.google}
+          zoom={14}
+          style={mapStyles}
+          initialCenter={{
+            lat: this.state.latitude,
+            lng: this.state.longitude
+          }}
+        >
+         <Marker
+          onClick={this.onMarkerClick}
+          name={'This is test name'}
+        />
+        </Map>
+                
+            </div>
+        )
+    }
+}
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyAZmqsFCP4hiXdgrwdESASBz8l99rhE82o'
+})(TextContainer);

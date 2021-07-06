@@ -8,7 +8,7 @@ import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import Example from '../Input/Modal';
 import './Chat.css';
-
+//import Demo1 from '../Input/Demo1'
 
 let socket;
 
@@ -83,6 +83,7 @@ const Chat = ({ location }) => {
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
           <Example />
+         
       </div>
       <TextContainer users={users}/>
     </div>
