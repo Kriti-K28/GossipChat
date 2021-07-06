@@ -3,10 +3,10 @@ import { Button} from 'react-bootstrap';
 import { Map, GoogleApiWrapper, Marker  } from 'google-maps-react';
 import './TextContainer.css'
 const mapStyles = {
-  width: '60%',
-  height: '93%',
-  marginLeft: '440px',
-  marginTop:'-545px',
+  width: '57%',
+  height: '92.5%',
+  // marginLeft: '440px',
+  // marginTop:'-545px',
   // display: 'flex',
   //   flexDirection:' column',
   //   color: 'white',

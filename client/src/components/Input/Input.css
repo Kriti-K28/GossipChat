@@ -25,18 +25,27 @@
     border: none;
     width: 20%;
     cursor: pointer;
+    border-bottom-right-radius: 10px ;
   }
   .LocButton
   { 
     margin-left: 230px; 
-    color: #fff !important;
-    text-transform: uppercase;
+    color: #2979FF !important;
+    
     text-decoration: none;
-    background: #2979FF;
-    margin-top: -50px;
+    background: none;
+    margin-top: -15%;
+    margin-bottom: 2.5%;
+    margin-right: 7%;
     display: inline-block;
     border: none;
-    padding: 10px;
-    width: 20%;
+    font-size: xx-large;
+    
     cursor: pointer;
+  }
+.LocButton:hover{
+  background: none;
+}
+  .hidden{
+    display: none;
   }

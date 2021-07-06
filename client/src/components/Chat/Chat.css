@@ -1,11 +1,14 @@
-
+*{
+  
+}
 .outerContainer {
-     display: flex; 
-    width: 100%;
+     display: grid; 
+    grid-template-columns: 35% 60%;
     justify-content:flex-start ;
     align-items: center;
     align-content: flex-start;
     height: 100vh;
+    padding: 1.5%;
     background-color: #1A1A1D;
     /* margin-left: -380px;
      */
@@ -14,13 +17,14 @@
   .container {
      display: flex; 
     flex-direction: column;
-    justify-content: space-between;
+    
     align-content: flex-start;
     background: #FFFFFF;
     border-radius: 8px;
-    height: 90%;
-    width: 35%;
+    
+    height: 90vh;
     margin-left: 20px;
+    
   }
   
   @media (min-width: 320px) and (max-width: 480px) {

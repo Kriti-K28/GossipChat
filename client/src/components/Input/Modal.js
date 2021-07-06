@@ -1,7 +1,7 @@
 import React ,{useState}from 'react';
 import { Link } from 'react-router-dom';
 import {Modal,Button} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './Input.css';
 
 import TextContainer from '../TextContainer/TextContainer';
@@ -40,14 +40,14 @@ function MyVerticallyCenteredModal(props) {
   
     return (
       <>
-        <Button size="sm" className="LocButton" variant="primary" onClick={() => setModalShow(true)}>
-          Share Location
+        <Button  className="LocButton"  onClick={() => setModalShow(true)}>
+        <i class="bi bi-geo-alt-fill " ></i>
         </Button>
-  
+
         <MyVerticallyCenteredModal
           show={modalShow}
-          onHide={() => setModalShow(false)}
-
+          onHide={() => setModalShow(false) }
+          className={` ${modalShow ? "" : "hidden"}`}
         />      
       </>
     );
