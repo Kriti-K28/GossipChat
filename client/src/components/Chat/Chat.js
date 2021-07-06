@@ -6,7 +6,7 @@ import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
-
+import Example from '../Input/Modal';
 import './Chat.css';
 
 
@@ -14,7 +14,7 @@ let socket;
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
+  const [room, setRoom] = useState('room');
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
@@ -73,11 +73,7 @@ const Chat = ({ location }) => {
 
   const creategrp = (event) => {
     event.preventDefault();
-
-    
-      
       socket.emit('createGroup', "nano", () => setMessage(''));
-    
   }
 
   return (
@@ -86,6 +82,7 @@ const Chat = ({ location }) => {
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+          <Example />
       </div>
       <TextContainer users={users}/>
     </div>
