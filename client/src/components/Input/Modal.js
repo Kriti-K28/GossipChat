@@ -1,4 +1,5 @@
 import React ,{useState}from 'react';
+import { Link } from 'react-router-dom';
 import {Modal,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Input.css';
@@ -13,21 +14,22 @@ function MyVerticallyCenteredModal(props) {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          {/* <Modal.Title id="contained-modal-title-vcenter">
             Modal heading
-          </Modal.Title>
-        </Modal.Header>
+          </Modal.Title> */}
+       
         <Modal.Body>
           <h5>Do you want to share your location</h5>
         </Modal.Body>
-        
-        <button onClick={()=>{
+        </Modal.Header>
+        <Button className=" mb-2" onClick={()=>{
         navigator.geolocation.getCurrentPosition(function(position) {
           console.log(position)    
         })
       }
-      }>share</button>
-     
+      }>share</Button>{' '}
+      {/* <Link to="../TextContainer/TextContainer.js"> <Button>Share</Button></Link> */}
+      
         <Button onClick={props.onHide}>Close</Button>
       </Modal>
     );
@@ -38,7 +40,7 @@ function MyVerticallyCenteredModal(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
+        <Button size="sm" className="LocButton" variant="primary" onClick={() => setModalShow(true)}>
           Share Location
         </Button>
   

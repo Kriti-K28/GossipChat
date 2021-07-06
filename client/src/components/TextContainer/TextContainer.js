@@ -1,10 +1,16 @@
 import React,{Component} from 'react';
+import { Button} from 'react-bootstrap';
 import { Map, GoogleApiWrapper, Marker  } from 'google-maps-react';
 import './TextContainer.css'
 const mapStyles = {
-  width: '50%',
-  height: '80%',
-  margin: '0'
+  width: '60%',
+  height: '93%',
+  marginLeft: '440px',
+  marginTop:'-545px',
+  // display: 'flex',
+  //   flexDirection:' column',
+  //   color: 'white',
+  //   justifyContent: 'space-between'
 };
 class TextContainer extends Component{
        constructor(props){
@@ -53,10 +59,10 @@ class TextContainer extends Component{
     render(){
         return(
             <div className="textContainer">
-                <button onClick={this.getLocation}>Get Cordinate</button>
-                <p>Lat: {this.state.latitude}</p>
-                <p>Lon: {this.state.longitude}</p>
-                <p>Address: {this.state.userAddress}</p>
+                {/* <Button onClick={this.getLocation}>Get Cordinate</Button>
+                <p className="coord">Lat: {this.state.latitude}</p>
+                <p className="coord">Lon: {this.state.longitude}</p> */}
+                {/* <p>Address: {this.state.userAddress}</p> */}
                  <Map
           google={this.props.google}
           zoom={14}
