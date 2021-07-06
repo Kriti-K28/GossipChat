@@ -29,19 +29,17 @@
   }
   .LocButton
   { 
-    margin-left: 230px; 
+    margin-left: 265px; 
+    width: fit-content;
     color: #2979FF !important;
-    
     text-decoration: none;
     background: none;
     margin-top: -15%;
     margin-bottom: 2.5%;
-    margin-right: 9%;
+    /* margin-right: 9%; */
     display: inline-block;
     border: none;
     font-size: xx-large;
-    
-    cursor: pointer;
   }
 .LocButton:hover, .LocButton:active, .LocButton:focus, .LocButton:enabled{
   background: none !important;

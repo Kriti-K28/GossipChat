@@ -4,7 +4,7 @@ import { Map, GoogleApiWrapper, Marker  } from 'google-maps-react';
 import './TextContainer.css'
 const mapStyles = {
   width: '57%',
-  height: '92.5%',
+  height: '90%',
   // marginLeft: '440px',
   // marginTop:'-545px',
   // display: 'flex',
