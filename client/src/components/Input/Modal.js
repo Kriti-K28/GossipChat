@@ -22,7 +22,7 @@ function MyVerticallyCenteredModal(props) {
           <h5>Do you want to share your location</h5>
         </Modal.Body>
         </Modal.Header>
-        <Button className=" mb-2" onClick={()=>{
+        <Button className=" modal-btn" onClick={()=>{
         navigator.geolocation.getCurrentPosition(function(position) {
           console.log(position)    
         })
@@ -30,7 +30,7 @@ function MyVerticallyCenteredModal(props) {
       }>share</Button>{' '}
       {/* <Link to="../TextContainer/TextContainer.js"> <Button>Share</Button></Link> */}
       
-        <Button onClick={props.onHide}>Close</Button>
+        <Button className=" modal-btn" onClick={props.onHide}>Close</Button>
       </Modal>
     );
   }

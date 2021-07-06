@@ -59,10 +59,7 @@ class TextContainer extends Component{
     render(){
         return(
             <div className="textContainer">
-                {/* <Button onClick={this.getLocation}>Get Cordinate</Button>
-                <p className="coord">Lat: {this.state.latitude}</p>
-                <p className="coord">Lon: {this.state.longitude}</p> */}
-                {/* <p>Address: {this.state.userAddress}</p> */}
+                
                  <Map
           google={this.props.google}
           zoom={14}

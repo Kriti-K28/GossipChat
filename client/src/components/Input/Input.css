@@ -36,16 +36,31 @@
     background: none;
     margin-top: -15%;
     margin-bottom: 2.5%;
-    margin-right: 7%;
+    margin-right: 9%;
     display: inline-block;
     border: none;
     font-size: xx-large;
     
     cursor: pointer;
   }
-.LocButton:hover{
-  background: none;
+.LocButton:hover, .LocButton:active, .LocButton:focus, .LocButton:enabled{
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  
 }
+
   .hidden{
     display: none;
+  }
+
+  .modal-btn{
+    width:80%;
+    
+    margin: auto;
+    margin-top:1%;
+    margin-bottom: 3%;
+  }
+  .modal-btn:last-child{
+    margin-bottom: 9%;
   }
